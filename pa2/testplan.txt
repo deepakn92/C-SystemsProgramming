@@ -1,0 +1,38 @@
+test 1:
+1. create list, check it is empty
+2. use 1, create list iterate, check empty
+3. use 2, check SLGetItem
+4. use 3, check SLNextItem
+5. destroy list iterator
+6. destroy list
+
+test 2:
+1. create list, null compare
+2. use 1, check null list
+
+test 3:
+1. create list, null destroy
+2. use 1, check null list
+
+test 4:
+1. create list with compare and destroy functions
+2. check SLInsert, add 1, 2, 3, 4, 5
+3. create list iterate
+4. check SLGetItem
+5. destroy list iterator
+6. destroy list
+
+test 5:
+1. create list with compare and destroy functions
+2. check SLInsert, add 1, 2, 3, 4, 5
+3. create list iterate
+4. check SLGetItem, SLNextItem
+5. destroy list iterator
+6. destroy list
+
+test 6:
+1. Do the test 5 with SLNextItem over list
+
+
+
+

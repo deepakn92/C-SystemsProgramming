@@ -1,0 +1,221 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 Monaco;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red222\green230\blue222;\red10\green10\blue10;
+\red196\green26\blue22;\red51\green51\blue51;}
+\margl1440\margr1440\vieww13000\viewh12880\viewkind0
+\deftab720
+\pard\pardeftab720\ri720\sl364
+
+\f0\fs24 \cf2 *****TEST CASES*****\
+Deepak Nalla\
+PA 5\
+\
+\cf0 \
+\cf2 1) Open account that already exists:\
+output: bank account with this name already exists!!\
+\
+2) Open account that is >100 chars\
+Output: The account name must be shorter than 100 char\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 3) Start non-existent account:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 Output:No account of that name exists!!\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 4) Start account that is in session elsewhere:\cf0 \
+\cf2  	\
+Output: Command failed, \cf0 end Account1\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 5) Start account when current client process is already in session\
+Output: \cf0 Command     Failed\
+\cf2 6) Credit, debit, balance, or finish when no account is in session:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 Output:	Error: Command Failed 
+\f1 \cf3 \cb4 \CocoaLigature0 ou are not currently being serviced, you cannot finish your session, if you would like to leave, type 'exit'
+\f0 \cf2 \cb1 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 7) Open more than 20 accounts:\
+ Output: Max capacity of bank is reached!!\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 	Error: command failed \cf0 \
+\cf2 8) Open new account while session is active:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 	Output: command failed\cf0 \
+\cf2 9) Debit more than current balance:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 	Output: Command failed, funds insuffcient\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 10) Open/start account w/o name:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 command failed:\cf0 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 11)Regular operation:\
+\
+\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\
+\pard\pardeftab720\ri720\sl364
+\cf2 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 ./client 127.0.0.1\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 Connected to server 127.0.0.1\
+\
+\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 Welcome. Please choose one of the following options:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  "open <accountname>",\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  "start <accountname>",\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  "credit <amount>",\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  "debit <amount>",\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  "balance",\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 server output:\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\
+\pard\pardeftab720\ri720\sl364
+\cf2 BINDING SUCCESS: Bind to port 51628\
+Shared memory is created!\
+Created child process pid\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f2\fs22 \cf5 \CocoaLigature0 Bank has 0 accounts currently
+\f0\fs24 \cf2 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl364
+\cf2 \
+\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input: open dee\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 client output: Banking semaphore is now open\
+\
+\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input: start dee\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf3 \cb4 \CocoaLigature0 COMMAND SUCCESS "start dee"\
+\
+
+\f0 \cf2 \cb1 \CocoaLigature1 \
+\
+\
+\pard\pardeftab720\ri720\sl364
+\cf2 input: credit 100\
+COMMAND success \'91credit 100\'92 \
+\
+input: balance\
+output: \
+Attempting to find balance\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf3 \cb4 \CocoaLigature0 Time is up!, Your session info:\
+Account 0: Name = dee, Balance = 100.000000, In Session = true
+\f0 \cf2 \cb1 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input: debit 25.00\
+OUTPUT: \'93WITHDRAW SUCCESS\'94\
+\
+input: balance:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf3 \cb4 \CocoaLigature0 Time is up!, Your session info:
+\f0 \cf0 \cb1 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl364
+\cf2 output:
+\f1 \cf3 \cb4 \CocoaLigature0 Account 0: Name = dee, Balance = 75.000000, In Session = true
+\f0 \cf2 \cb1 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input: finish\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2  output:\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f1 \cf3 \cb4 \CocoaLigature0 RECEIVING REQUEST FROM SERVER:  COMMAND SUCCESS "finish"
+\f0 \cf2 \cb1 \CocoaLigature1 \
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720\sl364
+\cf2 input: exit\
+\pard\pardeftab720\ri720\sl360\qr
+\cf0 \
+\pard\pardeftab720\ri720
+\cf2 output: Exiting bank. Goodbye!
+\f3\fs18 \cf6 \
+}

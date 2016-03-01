@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1347\cocoasubrtf570
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Test cases for PA3\
+\
+
+\b The first
+\b0  test case will solve the issue of fragmentation..\
+\
+So the input will be first testing small chunks of memblocks, which will be malloced from left to right\
+\
+char * a1 = (char*) malloc(100);\
+char * a2 = (char*) malloc(10);\
+char * a3 = (char*) malloc (50);\
+char * a4 = (char*) malloc(250);\
+\
+Then we malloc bigger chunks of memblocks, greater than 250 is considered a big chunk.\
+\
+char *a5 = (char*) malloc(500);\
+char *a6 = (char*) malloc(1000);\
+char *a7 = (char*) malloc(800);\
+char *a8 = (char*) malloc(1200);\
+\
+// 3766 allocated, not including headers\
+\
+Now, we will free specific blocks to create mini fragmentation:\
+\
+free(a1);\
+free(a3);\
+free(a5);\
+free(a8); \
+\
+our heap is now fragmented, with chunks of memory free in between chunks of memory occupied\
+we will now malloc some more new nodes\'85 \
+\
+char * b1 = (char*) malloc(100);\
+char * b2= (char*) malloc (900);\
+\
+\
+free the rest of the nodes\'85\
+\
+free(a2);\
+free(a4);\
+free(a5);\
+free(a6);\
+free(a8);\
+free(b1);\
+free(b2);\
+\
+\
+
+\b Next
+\b0 , we will try catching malloc errors such as:\
+1) double freeing pointers\
+2) trying to free addresses never returned by malloc\
+3) trying to free something never allocated\
+4) trying to malloc something beyond the size of the char array\
+\
+1)->  \
+\
+int * test123 = (int*) malloc(100);\
+free(test123);\
+free(test123); //should show an error saying we are freeing something that was already freed\
+\
+2) \
+\
+  int * test123 = (int*) malloc(100);\
+    free(test123 +100);\
+	free (test123 -200); // should show error of addresses that were never given by malloc\
+3)  int test = 900,000;\
+	free(test); //we never mallocd test and so it should show an error\
+\
+4) char * test = (char * ) malloc(5001); // should show error we are mallocing past the size of heap\
+\
+\
+}
